@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+    
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-7">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" class="form-control" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone No</label>
+                        <input type="text" class="form-control" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="summary">About You</label>
+                        <textarea  class="form-control" id="summary" name="summary"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="degree">Degree</label>
+                        <input type="text" class="form-control" id="degree" name="degree">
+                    </div>
+                    <div class="form-group">
+                        <label for="school">School</label>
+                        <input type="text" class="form-control" id="school" name="school">
+                    </div>
+                    <div class="form-group">
+                        <label for="university">University</label>
+                        <input type="text" class="form-control" id="university" name="university">
+                    </div>
+                    <div class="form-group">
+                        <label for="previous-work">Previous-work</label>
+                        <textarea  class="form-control" id="previous-work" name="previous_work"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="skills">Skills</label>
+                        <textarea  class="form-control" id="skills" name="skills"></textarea>
+                    </div>
+                
+            
+                    <button type="submit" class="btn btn-primary mr-3">Submit</button>
+                    
+                  </form><br>
+                  <a href="{% url 'list' %}"><button type="submit" class="btn btn-warning">Click here to view Resume Database</button></a>
+                  
+            </div>
+                    
+        </div>
+
+    </div>
+
+
+</body>
+</html>
